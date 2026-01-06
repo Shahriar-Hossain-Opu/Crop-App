@@ -1,0 +1,11 @@
+CREATE TABLE sensor_data (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    temperature FLOAT,
+    humidity FLOAT,
+    ph FLOAT,
+    rainfall FLOAT,
+    nitrogen INT,
+    phosphorus INT,
+    potassium INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

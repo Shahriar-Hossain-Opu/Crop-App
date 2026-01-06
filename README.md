@@ -81,45 +81,4 @@ Copy code
 
 
 
-flowchart LR
-    subgraph Field["🌾 Agricultural Field"]
-        DHT["DHT11 Sensor\n(Temp & Humidity)"]
-        PH["pH Sensor"]
-        Rain["Rain Sensor"]
-        NPK["NPK Sensor\n(RS485 / Modbus)"]
-    end
 
-    subgraph Controller["📟 ESP32 Controller"]
-        ESP["ESP32\nWiFi Enabled"]
-    end
-
-    subgraph Network["🌐 Network"]
-        WiFi["WiFi Router"]
-    end
-
-    subgraph Server["🖥 Backend Server"]
-        PHP["PHP API\n(test_data.php)"]
-        DB["MySQL Database"]
-    end
-
-    subgraph User["👨‍🌾 User Interface"]
-        Dashboard["Web Dashboard\n(Graphs & Logs)"]
-    end
-
-    DHT --> ESP
-    PH --> ESP
-    Rain --> ESP
-    NPK --> ESP
-
-    ESP -->|HTTP POST| WiFi
-    WiFi --> PHP
-    PHP --> DB
-    DB --> Dashboard
-
-
-humidity
-ph
-rainfall
-nitrogen
-phosphorus
-potassium

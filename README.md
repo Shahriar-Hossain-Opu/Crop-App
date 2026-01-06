@@ -61,28 +61,6 @@ Analysis / ML Model
 
 ---
 
-## 📁 Project Structure
-## 📁 Project Structure
-IoT-Soil-Monitoring/
-│
-├── esp32_code/
-│ └── esp32_sensor_wifi_db.ino
-│
-├── backend/
-│ └── test_data.php
-│
-├── database/
-│ └── sensor_data.sql
-│
-├── docs/
-│ └── system_architecture.png
-│
-└── README.md
-
-yaml
-Copy code
-
----
 
 ## 🔌 How to Run the Project
 
@@ -101,30 +79,6 @@ pgsql
 Copy code
 - Start Apache & MySQL
 
-### 3️⃣ Database Table
-```sql
-CREATE TABLE sensor_data (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  temperature FLOAT,
-  humidity FLOAT,
-  ph FLOAT,
-  rainfall FLOAT,
-  nitrogen INT,
-  phosphorus INT,
-  potassium INT,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-🌐 API Details
-Endpoint
-
-bash
-Copy code
-http://<server-ip>/dht11_project/test_data.php
-POST Parameters
-
-nginx
-Copy code
-temperature
 humidity
 ph
 rainfall

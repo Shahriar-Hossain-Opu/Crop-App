@@ -1,1 +1,133 @@
-# Crop-App
+# 🌱 IoT-Based Soil & Crop Monitoring System using WiFi
+
+## 📌 Project Overview
+This project implements an **IoT-based smart agriculture system** that collects real-time soil and environmental data and sends it to a database using WiFi. The system measures **NPK (Nitrogen, Phosphorus, Potassium)**, **temperature**, **humidity**, **soil pH**, and **rainfall**, which are critical parameters for precision agriculture and crop recommendation systems.
+
+---
+
+## 🎯 Objectives
+- Monitor real-time soil nutrients (NPK)
+- Measure environmental parameters (temperature, humidity, pH, rainfall)
+- Transmit sensor data to a remote database via WiFi (HTTP POST)
+- Store data for analysis and machine learning
+- Support precision agriculture applications
+
+---
+
+## 🛠️ Hardware Components
+- ESP32 Development Board  
+- NPK Soil Sensor (RS485 / Modbus)  
+- DHT11 / DHT22 Sensor (Temperature & Humidity)  
+- Analog pH Sensor  
+- Rainfall Sensor  
+- RS485 to TTL Converter  
+- Jumper wires & power supply  
+
+---
+
+## 💻 Software & Technologies
+- Arduino IDE  
+- ESP32 WiFi Library  
+- HTTPClient  
+- PHP  
+- MySQL  
+- XAMPP / Apache Server  
+
+---
+
+## 🧩 System Architecture
+Soil & Environmental Sensors
+(NPK, pH, DHT, Rain)
+↓
+ESP32
+↓ (WiFi – HTTP POST)
+PHP API
+↓
+MySQL Database
+↓
+Analysis / ML Model
+---
+
+## 📊 Parameters Collected
+| Parameter | Unit |
+|---------|------|
+| Temperature | °C |
+| Humidity | % |
+| pH | pH scale |
+| Rainfall | % |
+| Nitrogen | mg/kg |
+| Phosphorus | mg/kg |
+| Potassium | mg/kg |
+
+---
+
+## 📁 Project Structure
+## 📁 Project Structure
+IoT-Soil-Monitoring/
+│
+├── esp32_code/
+│ └── esp32_sensor_wifi_db.ino
+│
+├── backend/
+│ └── test_data.php
+│
+├── database/
+│ └── sensor_data.sql
+│
+├── docs/
+│ └── system_architecture.png
+│
+└── README.md
+
+yaml
+Copy code
+
+---
+
+## 🔌 How to Run the Project
+
+### 1️⃣ ESP32 Setup
+- Open the `.ino` file in Arduino IDE  
+- Select **ESP32 board**
+- Update WiFi SSID & password
+- Upload the code to ESP32
+
+### 2️⃣ Server Setup
+- Install **XAMPP**
+- Place `test_data.php` inside:
+htdocs/dht11_project/
+
+pgsql
+Copy code
+- Start Apache & MySQL
+
+### 3️⃣ Database Table
+```sql
+CREATE TABLE sensor_data (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  temperature FLOAT,
+  humidity FLOAT,
+  ph FLOAT,
+  rainfall FLOAT,
+  nitrogen INT,
+  phosphorus INT,
+  potassium INT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+🌐 API Details
+Endpoint
+
+bash
+Copy code
+http://<server-ip>/dht11_project/test_data.php
+POST Parameters
+
+nginx
+Copy code
+temperature
+humidity
+ph
+rainfall
+nitrogen
+phosphorus
+potassium

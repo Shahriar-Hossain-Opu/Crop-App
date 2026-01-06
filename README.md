@@ -1,4 +1,4 @@
-# 🌱 IoT-Based Soil & Crop Monitoring System using WiFi
+# 🌱 IoT-based Crop Recommendation System using Machine Learning via Mobile Application for Precision Agriculture in Bangladesh
 
 ## 📌 Project Overview
 This project implements an **IoT-based smart agriculture system** that collects real-time soil and environmental data and sends it to a database using WiFi. The system measures **NPK (Nitrogen, Phosphorus, Potassium)**, **temperature**, **humidity**, **soil pH**, and **rainfall**, which are critical parameters for precision agriculture and crop recommendation systems.
